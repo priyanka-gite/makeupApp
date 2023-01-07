@@ -1,14 +1,14 @@
 .search {
     display: flex;
     flex-direction: row;
-align-items: center;
+    align-items: center;
     justify-content: center;
-        background-color: rgba(64, 64, 64, 0.04) ;
+    /*background-color: rgba(64, 64, 64, 0.04) ;*/
+    background-color:  #f2fefe;
     padding-bottom: 20px;
 }
 .input-box{
-  width: 250px;
-    margin-right: 20px ;
+    width: 250px;
     height: 25px;
     border: 0.5px solid teal;
 
@@ -22,4 +22,15 @@ align-items: center;
     padding: 5px;
     font-weight: bold;
 
+}
+.icon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+.p-message{
+    margin: 20px;
+    font-size: medium;
 }

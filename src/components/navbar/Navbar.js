@@ -16,11 +16,17 @@ const Navbar = () => {
                     {/*<li className= "search-container search-container-flex left">*/}
                     {/*    INPUT*/}
                     {/*</li>*/}
-                    <NavLink to="/productsoverview" className="middle" > All Brands</NavLink>
+                    <NavLink
+                        to = "/productsoverview"
+                        className="middle"
+                    >
+
+                    ALL PRODUCTS
+                    </NavLink>
 
                     <p className="center" onClick={(()=>{
-                        navigate("/", )
-                    })}>The Makeup App.</p>
+                        navigate("/")
+                    })}><span className="name">BE </span>You.</p>
 
                     <div className="right">
                         <NavLink to ="/registerationpage" className=" menu-right">REGISTER</NavLink>

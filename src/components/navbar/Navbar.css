@@ -1,7 +1,8 @@
 /*navigation design*/
 .navbar-main-container{
     height: 50px;
-    background-color: rgba(64, 64, 64, 0.04);
+    /*background-color: rgba(64, 64, 64, 0.04);*/
+    background-color: #f2fefe;
     padding: 10px 20px;
 
 }
@@ -19,7 +20,14 @@ display: flex;
 
 .middle{
     list-style: none;
-    margin-left: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+    flex: 1;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
 }
 .center{
     flex: 1;
@@ -28,21 +36,9 @@ display: flex;
     font-size: x-large;
     list-style: none;
     cursor: pointer;
+    margin-left: 30px;
 }
 
-/*.search-container{*/
-/*    border: 0.5px solid darkgray;*/
-
-/*    margin-left: 25px;*/
-
-
-/*}*/
-/*.search-container-flex{*/
-/*    display: flex;*/
-/*    flex-direction: row;*/
-/*justify-content: space-between;*/
-/*    !*align-items: center;*!*/
-/*}*/
 .right {
     display: flex;
     flex-direction: row;
@@ -53,4 +49,28 @@ display: flex;
 
 .menu-right{
     margin-left: 125px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+.name{
+    font-size: 50px;
+}
+a:link{
+    color: black;
+}
+
+/* visited link */
+a:visited {
+    color: black;
+}
+
+/* mouse over link */
+a:hover{
+    color: teal;
+}
+
+/* selected link */
+a:active{
+   color: lightseagreen;
 }

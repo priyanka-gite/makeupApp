@@ -6,11 +6,9 @@ import ProductsOverview from "../productsoverview/ProductsOverview";
 
 const Home = () => {
 
-
     return (
         <div>
-            <Slider/>
-
+            <Slider   />
         </div>
     );
 };

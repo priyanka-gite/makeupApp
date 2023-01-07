@@ -8,22 +8,26 @@ import ProductsOverview from "./pages/productsoverview/ProductsOverview";
 import SearchBar from "./components/searchBar/SearchBar";
 import LoginPage from "./pages/login/LoginPage";
 import RegisterationPage from "./pages/registration/RegisterationPage";
+import Footer from "./components/footer/Footer"
+import Product from "./pages/product/Product";
 
 function App() {
     const navigate = useNavigate();
     const [searchValue, setSearchValue] = useState("")
+
     return (
         <div >
             <Announcement/>
             <Navbar/>
-            <SearchBar setSearchValueHandler = {setSearchValue} />
-            {/*{searchInputValue ? navigate("/productsoverview") : <></>}*/}
+            <SearchBar />
             <Routes>
-                <Route path= "/" element ={ <Home/> }/>
-                <Route path= "/productsoverview" element ={ <ProductsOverview searchData= {searchValue}/> }/>
+                <Route path= "/" element ={ <Home/>}/> }/>
+                <Route path= "/productsoverview" element ={<ProductsOverview/>}/>
+                <Route path= "productsoverview/:product" element ={ <Product/> }/>
                 <Route path= "/loginpage" element ={ <LoginPage/> }/>
                 <Route path= "/registerationpage" element ={ <RegisterationPage/> }/>
             </Routes>
+            <Footer/>
         </div>
     );
 }

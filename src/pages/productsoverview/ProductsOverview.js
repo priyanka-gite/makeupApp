@@ -1,28 +1,54 @@
 import React, {useEffect, useState} from 'react';
+import {useLocation, useNavigate} from 'react-router-dom';
 import axios from "axios";
 import ProductCard from '../../components/productCard/ProductCard'
-import SearchBar from "../../components/searchBar/SearchBar";
 
-
-const ProductsOverview = ({searchData}) => {
+const ProductsOverview = () => {
     const [data,setData] = useState({});
-    const [inputValue, setInputValue] =useState("");
-
     const controller =  new AbortController();
+    const location = useLocation();
 
     async function fetchData () {
-
         console.log("called fetch data");
-        console.log(searchData.brand);
-        // setData({});
+        let queryString = "";
+        console.log(location.state.category)
+        // if statement here is for the error that location.state is empty. hence it works ahead only when location.state is filled.
+        if(location.state) {
+            if (location.state.brand) {
+                queryString = `brand=${location.state.brand}`;
+            }
+            console.log(queryString)
 
-        try {
-        const baseUrl = `http://makeup-api.herokuapp.com/api/v1/products.json`;
-        if(searchData.brand) {
-            const response = await axios.get(`${baseUrl}?brand=${searchData.brand}`);
-            console.log(response.data)
-            setData(response.data);
+            if (location.state.category) {
+                queryString = `category=${location.state.category}`;
+            }
+            console.log(queryString)
+
+            if (location.state.product_type) {
+                if (queryString > 0) {
+                    queryString = queryString + `&product_type=${location.state.product_type}`;
+                    console.log(queryString)
+                } else {
+                    queryString = `product_type=${location.state.product_type}`
+                    console.log(queryString);
+                }
+            }
+
         }
+        try {
+            const baseUrl = `http://makeup-api.herokuapp.com/api/v1/products.json`;
+            let fullUrl = "";
+            if (queryString) {
+                fullUrl = baseUrl + "?" + queryString
+                console.log(fullUrl)
+            }else
+            {
+                fullUrl = baseUrl;
+                console.log(fullUrl)
+            }
+            // const response = await axios.get(fullUrl);
+            // console.log(response.data)
+            // setData(response.data);
         }
         catch (e) {
             console.error(e)
@@ -37,28 +63,26 @@ const ProductsOverview = ({searchData}) => {
         }
     },[])
     return (
-        <>
-            This is data
+        <div>
+            <div >
             {
-
                 Object.keys(data).length > 0 &&
-                <>
-                    <div>
-                        {
-                            data.map((product) => {
-                                return (
-                                    <>
-                                        <ProductCard product={product}/>
-                                    </>
-                                )
-                            })
-                        }
-                    </div>
-                    <p> ... Back to Homepage</p>
-                </>
+                <div >
+                    {
+                        data.map((product) => {
+                            return (
+                                <aside key = {`${product.id}` }
+                                >
+                                    <ProductCard product={product}
+                                    />
+                                </aside>
+                                                          )
+                        })
+                    }
+                </div>
             }
-
-        </>
+            </div>
+        </div>
     );
 };
 
