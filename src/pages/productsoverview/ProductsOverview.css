@@ -1,0 +1,33 @@
+.outer-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #f2fefe;
+    ;
+}
+.right-side{
+    border: 2px solid teal;
+    margin: 20px;
+    width: 80vw;
+    padding: 20px;
+
+}
+
+.left-side{
+    border: 2px solid teal;
+    margin: 20px;
+    width: 20vw;
+    height: 80vh;
+    padding: 20px;
+}
+.right-side-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.left-side{
+
+}

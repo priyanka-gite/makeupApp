@@ -1,9 +1,10 @@
 /*navigation design*/
 .navbar-main-container{
-    height: 50px;
+    height: 70px;
     /*background-color: rgba(64, 64, 64, 0.04);*/
     background-color: #f2fefe;
     padding: 10px 20px;
+    flex-wrap: wrap;
 
 }
 /*navigation main elements of flexbox*/

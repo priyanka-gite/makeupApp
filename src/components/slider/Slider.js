@@ -6,15 +6,12 @@ import {sliderItems} from "../../data";
 import {useNavigate} from "react-router-dom";
 
 const Container = styled.div`
-  padding-top: -50%;
-  width: 100%;
+    width: 100%;
   height: 100vh;
   display: flex;
-  //background-color: #cfb9e4;
   position: relative;
   overflow: hidden;
   flex-wrap: wrap;
-
 `
 const Arrow = styled.div`
   width: 50px;
@@ -62,7 +59,8 @@ const InfoContainer = styled.div`
   margin-right: 50px;
 `
 const Title = styled.h1`
-  font-size: 70px
+  font-size: 70px;
+  color: #e41b51;
 `
 const Description = styled.p`
   margin: 50px 0;

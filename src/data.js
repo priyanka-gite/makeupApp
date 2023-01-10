@@ -2,7 +2,7 @@ export const sliderItems = [
     {
         id: 1,
         type: "Blush...",
-        img: "https://www.nyxcosmetics.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-cpd-nyxusa-master-catalog/default/dwcffa1f2c/ProductImages/Lips/Whipped_Lip_And_Cheek_Souffle/whippedlipandcheeksouffle_main.jpg?sw=390&sh=390&sm=fit",
+        img: "https://api.products.aspose.app/svg/api/files?uri=1e8ba373-55b7-4889-a883-6bc2613d9a31.svg",
         desc: "Dont Compromise on your style",
         bg: "e9edc9",
     },

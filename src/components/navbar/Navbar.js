@@ -2,8 +2,8 @@ import React from 'react';
 import {NavLink, useNavigate} from 'react-router-dom';
 import './Navbar.css'
 import ProductsOverview from "../../pages/productsoverview/ProductsOverview";
-import RegisterationPage from "../../pages/registration/RegisterationPage";
-import LoginPage from "../../pages/login/LoginPage";
+import Signup from "../signup/Signup";
+import LoginPage from "../login/LoginPage";
 import SearchBar from "../searchBar/SearchBar";
 
 
@@ -12,25 +12,22 @@ const Navbar = () => {
     return (
         <>
             <nav className= "navbar-main-container">
-                <div className= "nav-outer-box">
-                    {/*<li className= "search-container search-container-flex left">*/}
-                    {/*    INPUT*/}
-                    {/*</li>*/}
-                    <NavLink
-                        to = "/productsoverview"
-                        className="middle"
-                    >
-
-                    ALL PRODUCTS
-                    </NavLink>
+                <div className= "middle">
+                    <SearchBar/>
+                    {/*<NavLink*/}
+                    {/*    to = "/productsoverview"*/}
+                    {/*    className="middle"*/}
+                    {/*>*/}
+                    {/*ALL PRODUCTS*/}
+                    {/*</NavLink>*/}
 
                     <p className="center" onClick={(()=>{
                         navigate("/")
                     })}><span className="name">BE </span>You.</p>
 
                     <div className="right">
-                        <NavLink to ="/registerationpage" className=" menu-right">REGISTER</NavLink>
-                        <NavLink to ="/loginpage" className=" menu-right">SIGN IN</NavLink>
+                        <NavLink to ="/signup" className=" menu-right">SIGNUP</NavLink>
+                        <NavLink to ="/loginpage" className=" menu-right">LOGIN</NavLink>
                     </div>
                 </div>
 
