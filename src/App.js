@@ -7,12 +7,11 @@ import Announcement from "./components/announcement/Announcement";
 import ProductsOverview from "./pages/productsoverview/ProductsOverview";
 import LoginPage from "./components/login/LoginPage";
 import Signup from "./components/signup/Signup";
-import Footer from "./components/footer/Footer"
 import Product from "./pages/product/Product";
 
 function App() {
     return (
-        <div >
+        <div className="margin">
             <Announcement/>
             <Navbar/>
 

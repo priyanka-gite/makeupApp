@@ -1,38 +1,42 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios, {Axios} from "axios";
+import axios from "axios";
+
 
 const Signup = () => {
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const[role, setRole]= useState("")
-
+    const [error,toggleError] =useState(false)
+    const [loading,toggleLoading] =useState(false)
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log({ email, username, role, password });
-        setEmail("");
-        setRole("");
-        setUsername("");
-        setPassword("");
-    };
+        toggleLoading(true)
+       try{ const res = axios.post("https://frontend-educational-backend.herokuapp.com/api/auth/signup", {email,username, role, password} )
+           toggleError(false)
+        console.log(res) }
+        catch (e){
+           console.error(e)
+            toggleError(true)
+        }
+        toggleLoading(false)
+             };
 
     const gotoLoginPage = () => navigate("/loginpage");
 
 
 
-    async function fetchSigning() {
-        const res = await axios.get("https://frontend-educational-backend.herokuapp.com/api/test/all");
-        console.log(res);
-    }
-    fetchSigning();
-
     return (
         <div >
+            {
+            loading && <span>Please wait while your page is loading</span>
+        }
             <h2>Sign up </h2>
             <form className='signup__form' onSubmit={handleSubmit}>
+
                 <label htmlFor='email'>Email Address</label>
                 <input
                     type='email'
@@ -42,13 +46,13 @@ const Signup = () => {
                     required
                     onChange={(e) => setEmail(e.target.value)}
                 />
+
                 <label htmlFor='username'>Username</label>
                 <input
                     type='text'
                     id='username'
                     name='username'
                     value={username}
-                    minLength={6}
                     minLength={6}
                     required
                     onChange={(e) => setUsername(e.target.value)}
@@ -74,7 +78,7 @@ const Signup = () => {
                     onChange={(e) => setPassword(e.target.value)}
                 />
 
-                <button className='signupBtn'>SIGN UP</button>
+                <button className='signupBtn' type="submit" >SIGN UP</button>
                 <p>
                     Already have an account?{" "}
                     <span className='link' onClick={gotoLoginPage}>
