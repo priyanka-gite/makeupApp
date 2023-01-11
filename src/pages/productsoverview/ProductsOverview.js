@@ -1,19 +1,17 @@
 import React, {useEffect, useState} from 'react';
-import {useLocation, useNavigate} from 'react-router-dom';
+import {useLocation} from 'react-router-dom';
 import axios from "axios";
 import ProductCard from '../../components/productCard/ProductCard'
 import './ProductsOverview.css'
+import Filter from "../../components/Filter";
 
 
 const ProductsOverview = () => {
     const [data,setData] = useState({});
     const controller =  new AbortController();
     const location = useLocation();
-    const[inputValue,setInputValue]= useState("");
-    const[selectedValue,setSelectedValue] =useState(null)
-    const [loading,toggleLoading] =useState(false)
-    const navigate = useNavigate();
 
+    const [loading,toggleLoading] =useState(false)
 
     async function fetchData () {
         console.log("called fetch data");
@@ -22,7 +20,7 @@ const ProductsOverview = () => {
         if(location.state) {
             console.log(location)
             if (location.state.brand) {
-                queryString = `brand=${location.state.brand}`;
+               queryString = `brand=${location.state.brand}`;
             }
             console.log(queryString)
 
@@ -35,6 +33,16 @@ const ProductsOverview = () => {
                     console.log(queryString);
                 }
             }
+
+                if (location.state.price_greater_than) {
+                    queryString = `price_greater_than=${location.state.price_greater_than}`;
+                }
+
+                if (location.state.price_less_than) {
+                    queryString =
+                        `price_less_than=${location.state.price_less_than}`;
+                }
+
         }
         toggleLoading(true)
         try {
@@ -48,9 +56,9 @@ const ProductsOverview = () => {
                 fullUrl = baseUrl;
                 console.log(fullUrl)
             }
-            // const response = await axios.get(fullUrl);
-            // console.log(response.data)
-            // setData(response.data);
+            const response = await axios.get(fullUrl);
+            console.log(response.data)
+            setData(response.data);
         }
         catch (e) {
             console.error(e)
@@ -66,35 +74,16 @@ const ProductsOverview = () => {
         }
     },[location])
 
-    const onSubmit = (e) => {
-        e.preventDefault();
-        console.log("Lets Find")
-        navigate("/productsoverview",{state:{brand:inputValue}})
 
-    }
     return (
         <div className="outer-container">
             <div> {
                 loading && <span>Please wait while your page is loading</span>
             }
             </div>
+
             <aside className="left-side">
-                <div>Filter By:</div>
-                <label htmlFor="brand">Choose a Brand:</label>
-                <input type="text"
-                       name="brand"
-                       id="brand"
-                       placeholder="Search by Brand"
-                       value={inputValue}
-                       onChange= {(e)=>{
-                           setInputValue(e.target.value)
-                       }}>
-
-                </input>
-
-                <section>TYPE:</section>
-                <section> PRICE:</section>
-                <button type="submit" onSubmit={onSubmit}>Let's Find</button>
+                <Filter/>
             </aside>
 
             <aside className="right-side">
