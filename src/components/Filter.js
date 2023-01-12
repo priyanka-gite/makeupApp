@@ -11,7 +11,6 @@ const Filter = () => {
     const onSubmit = (e) => {
         e.preventDefault();
         navigate("/productsoverview",{state:{brand:inputValue,product_type:inputType,price_greater_than: minInput,price_less_than:maxInput}
-
         })
         console.log("Lets Find")
     }

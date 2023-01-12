@@ -88,6 +88,7 @@ const Slider = () => {
             setSlideIndex(slideIndex < 9 ? slideIndex +1 : 0);
         }
     }
+
     return (
         <Container>
             <Arrow direction="left" onClick={()=>handleClick("left")}>
@@ -108,7 +109,9 @@ const Slider = () => {
                                         {item.desc}
                                     </Description>
                                     <Button onClick={(e)=>{
-                                        navigate("/productsoverview", {state:{product_type: item.type}})
+                                        console.log(item.type);
+                                        navigate("/productsoverview", {state:{product_type:item.type}})
+
                                     }}>
                                         SHOP NOW
                                     </Button>
