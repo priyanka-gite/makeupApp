@@ -7,23 +7,26 @@ const Signup = () => {
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const[role, setRole]= useState("")
+    const[role, setRole]= useState("user")
     const [error,toggleError] =useState(false)
     const [loading,toggleLoading] =useState(false)
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    async function handleSubmit (e) {
+
+        console.log("user is registered")
         e.preventDefault();
         toggleLoading(true)
-       try{ const res = axios.post("https://frontend-educational-backend.herokuapp.com/api/auth/signup", {email,username, role, password} )
+
+       try{ const res = axios.post("https://frontend-educational-backend.herokuapp.com/api/auth/signup", {email: email ,username: username,role : role ,password : password} )
            toggleError(false)
         console.log(res) }
-        catch (e){
-           console.error(e)
+        catch (error){
+           console.error(error)
             toggleError(true)
         }
         toggleLoading(false)
-             };
+             }
 
     const gotoLoginPage = () => navigate("/loginpage");
 
@@ -58,15 +61,15 @@ const Signup = () => {
                     onChange={(e) => setUsername(e.target.value)}
                 />
 
-                <label htmlFor='role'>Role</label>
-                <input
-                    type='text'
-                    id='role'
-                    name='role'
-                    value={role}
-                    required
-                    onChange={(e) => setRole(e.target.value)}
-                />
+                {/*<label htmlFor='role'>Role</label>*/}
+                {/*<input*/}
+                {/*    type='text'*/}
+                {/*    id='role'*/}
+                {/*    name='role'*/}
+                {/*    value={role}*/}
+                {/*    required*/}
+                {/*    onChange={(e) => setRole(e.target.value)}*/}
+                {/*/>*/}
                 <label htmlFor='password'>Password</label>
                 <input
                     type='password'
