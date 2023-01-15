@@ -77,9 +77,6 @@ const Signup = () => {
 
                     <button className="signup-btn" type="submit" >SIGN UP</button>
 
-                    {!email.includes("@") &&
-                    <span> Please enter a valid email address</span>}
-
                     <p>
                         Already have an account?{" "}
                         <span className="link link-signup" onClick={gotoLoginPage}>

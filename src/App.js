@@ -11,6 +11,7 @@ import Product from "./pages/product/Product";
 import Profile from "./pages/Profile";
 import {AuthContext} from "./context/AuthContext";
 import Footer from "./components/footer/Footer";
+import Comparison from "./pages/Comparison";
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
                 <Route path= "/login" element ={ <LoginPage/> }/>
                 <Route path= "/profile" element ={isAuth ? <Profile/> : <Navigate to="/"/>}/>
                 <Route path= "/productsoverview:product" element ={ <Product/> }/>
+                <Route path= "/comparison" element ={ <Comparison/> }/>
             </Routes>
             <Footer/>
         </div>

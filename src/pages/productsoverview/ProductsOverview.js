@@ -1,13 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import {useLocation} from 'react-router-dom';
+import {useLocation, useNavigate} from 'react-router-dom';
 import axios from "axios";
 import ProductCard from '../../components/productCard/ProductCard'
 import './ProductsOverview.css'
 import Filter from "../../components/Filter";
 import Sorting from "../../components/Sorting";
-import Comparison from "../../components/Comparison";
+import Comparison from "../Comparison";
 import { request } from 'graphql-request';
 import {Pagination} from "@mui/material";
+
 
 
 const ProductsOverview = () => {
@@ -17,10 +18,24 @@ const ProductsOverview = () => {
     const [loading,toggleLoading] =useState(false)
     const controller =  new AbortController();
     const location = useLocation();
+    const [selectedItems, setSelectedItems] = useState([]);
+    // const [currentPage,setCurrentPage] =useState(1);
+    // const [productsPerPage,setProductPerPage] =useState(20)
+    const navigate = useNavigate();
 
-    const [currentPage,setCurrentPage] =useState(1);
-    const [productsPerPage,setProductPerPage] =useState(20)
+    const addToCompare = (product) => {
+        selectedItems.length> 2 ? <span>Please unselect one item</span> : selectedItems.push(product)
+        console.log("added")
+    }
+    const removeFromCompare = (product) => {
+        selectedItems.pop(product)
+        console.log("removed")
+    }
 
+    // const indexOfLastProduct = currentPage * productsPerPage;
+    // const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+    // const currentProducts = data.slice(indexOfFirstProduct, indexOfLastProduct);
+    // console.log(currentProducts);
 
     async function fetchData () {
         console.log("called fetch data");
@@ -100,10 +115,7 @@ const ProductsOverview = () => {
 
     }
 
-    const indexOfLastProduct = currentPage * productsPerPage;
-    const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-    // const currentProducts = data.slice(indexOfFirstProduct, indexOfLastProduct);
-    // console.log(currentProducts);
+
     return (
         <>
             <div> {
@@ -121,6 +133,17 @@ const ProductsOverview = () => {
                         <Sorting setSortOrderHandler={sorting}
                         />
                     </div>
+                    {
+                        selectedItems.length == 2 &&
+                        <button type="button"
+                                onClick={()=>{
+                                    console.log("items selelcted")
+                                    navigate("/comparison")
+                                }
+                                }>
+                            CompareButton
+                        </button>
+                    }
 
                     {
                         Object.keys(data).length > 0 &&
@@ -131,17 +154,18 @@ const ProductsOverview = () => {
 
                                         <div key={`${product.id}`}
                                         >
-                                            <ProductCard product={product}/>
-                                            {/*<Comparison product={product}/>*/}
+                                            <ProductCard product={product} addToCompare={addToCompare} removeFromCompare={removeFromCompare}/>
 
                                         </div>
 
                                     )
                                 })
                             }
-                            <Pagination productsPerPage ={productsPerPage} totalProducts = {data.length} setCurrentPage={setCurrentPage}/>
                         </div>
                     }
+                    {/*<Pagination productsPerPage ={productsPerPage} totalProducts = {data.length} setCurrentPage={setCurrentPage}/>*/}
+
+
                 </aside>
             </div>
             }
