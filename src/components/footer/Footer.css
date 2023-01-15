@@ -1,3 +1,14 @@
 .footer{
-    height: 20vh;
+    background-color: teal;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    color: white;
+    font-size: 15px;
+    border: teal solid 2px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
 }

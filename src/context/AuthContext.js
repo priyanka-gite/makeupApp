@@ -10,24 +10,27 @@ const AuthContextProvider = ({children}) => {
     });
     const navigate = useNavigate()
 
-    function login (jwt) {
+    function login (jwt,username) {
         console.log("user is logged in")
-        console.log(jwt)
+        localStorage.setItem('token',jwt)
         setAuth({
             isAuth: true,
             user: {
-             email:email,
-
+                username:username
             }
         })
         navigate("/profile")
     }
     function logout () {
         console.log(" user is logged out")
-        setIsAuth(false)
+        setAuth({
+            isAuth: false,
+            user: null
+        })
     }
     const contextData = {
-        isAuth:isAuth,
+        isAuth:auth.isAuth,
+        user:auth.user,
         login:login,
         logout:logout
     }

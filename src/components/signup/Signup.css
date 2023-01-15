@@ -1,0 +1,25 @@
+.outerClass-signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+.form-class-signup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+.signup-btn {
+    height: 30px;
+    background-color: transparent ;
+    padding: 5px;
+    font-weight: bold;
+    margin: 10px;
+    cursor: pointer;
+}
+.link-signup {
+    cursor: pointer;
+}

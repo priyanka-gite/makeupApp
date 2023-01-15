@@ -5,19 +5,26 @@ import ProductCard from '../../components/productCard/ProductCard'
 import './ProductsOverview.css'
 import Filter from "../../components/Filter";
 import Sorting from "../../components/Sorting";
+import Comparison from "../../components/Comparison";
+import { request } from 'graphql-request';
+import {Pagination} from "@mui/material";
 
 
 const ProductsOverview = () => {
+
     const [data,setData] = useState({});
+    const [sortOrder,setSortOrder] =useState("");
+    const [loading,toggleLoading] =useState(false)
     const controller =  new AbortController();
     const location = useLocation();
 
-    const [sortOrder,setSortOrder] =useState("")
+    const [currentPage,setCurrentPage] =useState(1);
+    const [productsPerPage,setProductPerPage] =useState(20)
 
-    const [loading,toggleLoading] =useState(false)
 
     async function fetchData () {
         console.log("called fetch data");
+        toggleLoading(true)
         let queryString = '';
         // if statement here is for the error that location.state is empty. hence it works ahead only when location.state is filled.
         if(location.state) {
@@ -61,7 +68,7 @@ const ProductsOverview = () => {
                 fullUrl = baseUrl;
             }
             const response = await axios.get(fullUrl);
-            console.log(response.data)
+            console.log((response.data))
             setData(response.data);
         }
         catch (e) {
@@ -93,6 +100,10 @@ const ProductsOverview = () => {
 
     }
 
+    const indexOfLastProduct = currentPage * productsPerPage;
+    const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+    // const currentProducts = data.slice(indexOfFirstProduct, indexOfLastProduct);
+    // console.log(currentProducts);
     return (
         <>
             <div> {
@@ -106,10 +117,11 @@ const ProductsOverview = () => {
                 </aside>
 
                 <aside className="right-side">
-                    <div>
+                    <div className="sort">
                         <Sorting setSortOrderHandler={sorting}
                         />
                     </div>
+
                     {
                         Object.keys(data).length > 0 &&
                         < div className="right-side-container">
@@ -120,12 +132,14 @@ const ProductsOverview = () => {
                                         <div key={`${product.id}`}
                                         >
                                             <ProductCard product={product}/>
+                                            {/*<Comparison product={product}/>*/}
 
                                         </div>
 
                                     )
                                 })
                             }
+                            <Pagination productsPerPage ={productsPerPage} totalProducts = {data.length} setCurrentPage={setCurrentPage}/>
                         </div>
                     }
                 </aside>

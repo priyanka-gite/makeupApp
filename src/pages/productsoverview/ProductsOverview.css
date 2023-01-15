@@ -3,7 +3,6 @@
     flex-direction: row;
     justify-content: space-between;
     background-color: #f2fefe;
-    ;
 }
 .right-side{
     border: 2px solid teal;
@@ -27,7 +26,11 @@
     justify-content: space-between;
     flex-wrap: wrap;
 }
-
-.left-side{
-
+.sort {
+    margin: 30px;
+    font-size: medium;
+    font-weight: bold;
+    display: flex;
+    align-items: flex-end;
+flex-direction: row;
 }

@@ -10,25 +10,25 @@ import Signup from "./components/signup/Signup";
 import Product from "./pages/product/Product";
 import Profile from "./pages/Profile";
 import {AuthContext} from "./context/AuthContext";
+import Footer from "./components/footer/Footer";
 
 function App() {
 
     const {isAuth} = useContext( AuthContext) ;
 
     return (
-        <div className="margin">
+        <div className="margin container">
             <Announcement/>
             <Navbar/>
-
             <Routes>
                 <Route path= "/" element ={ <Home/>}/> }/>
                 <Route path='/signup' element={<Signup />} />
                 <Route path= "/productsoverview" element ={<ProductsOverview/>}/>
-                <Route path= "/loginpage" element ={ <LoginPage/> }/>
+                <Route path= "/login" element ={ <LoginPage/> }/>
                 <Route path= "/profile" element ={isAuth ? <Profile/> : <Navigate to="/"/>}/>
                 <Route path= "/productsoverview:product" element ={ <Product/> }/>
             </Routes>
-
+            <Footer/>
         </div>
     );
 }

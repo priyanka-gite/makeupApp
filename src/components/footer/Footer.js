@@ -1,10 +1,10 @@
 import React from 'react';
+import './Footer.css'
 
 const Footer = () => {
     return (
         <footer className="footer">
-This is footer
-
+Created by Priyanka Gite
         </footer>
     );
 };

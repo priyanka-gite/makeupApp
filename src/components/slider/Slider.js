@@ -51,16 +51,16 @@ const ImageContainer = styled.div`
 const Image = styled.img`
   height: 500px;
   width: 500px;
-  padding-left: 50%;
+  padding-left: 40%;
 `
 const InfoContainer = styled.div`
   flex: 1;
-  padding: 40%;
-  margin-right: 50px;
+  padding: 35%;
+  margin-right: 40px;
 `
 const Title = styled.h1`
   font-size: 70px;
-  color: #e41b51;
+  color: teal;
 `
 const Description = styled.p`
   margin: 50px 0;
