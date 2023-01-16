@@ -6,7 +6,13 @@ const ProductCard = ({product, addToCompare,removeFromCompare}) => {
 
     const handleChange = (e) => {
         let isChecked = e.target.checked
-        isChecked ? addToCompare(product) : removeFromCompare(product);
+        if(isChecked) {
+           if( addToCompare(product)=== false) {
+            e.target.checked = false
+           }
+        } else {
+            removeFromCompare(product);
+        }
     };
 
     return (
@@ -22,11 +28,10 @@ const ProductCard = ({product, addToCompare,removeFromCompare}) => {
 
             <form>
                 <div>
-                    <label htmlFor="compare">Compare</label>
+                    <label className="font compare-check" htmlFor="compare">Compare</label>
                     <input
                         type="checkbox"
                         id="compare"
-                        value={checked}
                         onChange={(e)=>handleChange(e)}
                     />
                 </div>
@@ -34,15 +39,6 @@ const ProductCard = ({product, addToCompare,removeFromCompare}) => {
             </form>
 
 
-            {/*{selected && selected.includes(product) ? (*/}
-            {/*    <button color="red" onClick={() => removeFromCompare(product)}>*/}
-            {/*        Remove*/}
-            {/*    </button>*/}
-            {/*) : (*/}
-            {/*    <button color="blue" onClick={() => addToCompare(product)}>*/}
-            {/*        Compare*/}
-            {/*    </button>*/}
-            {/*)}*/}
         </section>
 
         // </div>

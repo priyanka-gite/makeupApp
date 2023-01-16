@@ -3,15 +3,10 @@ import {useLocation, useNavigate} from 'react-router-dom';
 import axios from "axios";
 import ProductCard from '../../components/productCard/ProductCard'
 import './ProductsOverview.css'
-import Filter from "../../components/Filter";
+import Filter from "../../components/filter/Filter";
 import Sorting from "../../components/Sorting";
-import Comparison from "../Comparison";
-import { request } from 'graphql-request';
-import {Pagination} from "@mui/material";
 
-
-
-const ProductsOverview = () => {
+const ProductsOverview = ({setItemshandler}) => {
 
     const [data,setData] = useState({});
     const [sortOrder,setSortOrder] =useState("");
@@ -24,18 +19,25 @@ const ProductsOverview = () => {
     const navigate = useNavigate();
 
     const addToCompare = (product) => {
-        selectedItems.length> 2 ? <span>Please unselect one item</span> : selectedItems.push(product)
-        console.log("added")
+
+        if (selectedItems.length < 2) {
+
+            selectedItems.push(product);
+            console.log(selectedItems.length)
+            return true;
+        }
+        return false;
     }
     const removeFromCompare = (product) => {
-        selectedItems.pop(product)
-        console.log("removed")
+        selectedItems.pop(product);
+        console.log("removed");
     }
 
     // const indexOfLastProduct = currentPage * productsPerPage;
     // const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
     // const currentProducts = data.slice(indexOfFirstProduct, indexOfLastProduct);
     // console.log(currentProducts);
+    setItemshandler(selectedItems);
 
     async function fetchData () {
         console.log("called fetch data");
@@ -50,16 +52,7 @@ const ProductsOverview = () => {
             // console.log(queryString)
 
             if (location.state.product_type) {
-                // if (queryPresent ) {
-                //     queryString = queryString + `&product_type=${location.state.product_type}`;
-                //     console.log(queryString)
-                // } else {
-                //     queryString = `product_type=${location.state.product_type}`
-                //     console.log(queryString);
-                //
-                // }
                 queryString = (queryString.length > 0 ? queryString+'&': '') + `product_type=${location.state.product_type}`
-
             }
 
             if (location.state.price_greater_than) {
@@ -118,6 +111,7 @@ const ProductsOverview = () => {
 
     return (
         <>
+
             <div> {
                 loading && <span>Please wait while your page is loading</span>
             }
@@ -133,16 +127,18 @@ const ProductsOverview = () => {
                         <Sorting setSortOrderHandler={sorting}
                         />
                     </div>
+
                     {
-                        selectedItems.length == 2 &&
-                        <button type="button"
-                                onClick={()=>{
-                                    console.log("items selelcted")
+                        selectedItems ?
+                            <button
+                                className="button"
+                                type="button"
+                                onClick={() => {
                                     navigate("/comparison")
                                 }
                                 }>
-                            CompareButton
-                        </button>
+                                COMPARE
+                            </button> : null
                     }
 
                     {
@@ -154,7 +150,7 @@ const ProductsOverview = () => {
 
                                         <div key={`${product.id}`}
                                         >
-                                            <ProductCard product={product} addToCompare={addToCompare} removeFromCompare={removeFromCompare}/>
+                                            <ProductCard product={product} addToCompare={addToCompare} removeFromCompare={removeFromCompare}            />
 
                                         </div>
 
