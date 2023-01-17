@@ -3,13 +3,16 @@ import {NavLink, useNavigate} from 'react-router-dom';
 import './Navbar.css'
 import SearchBar from "../searchBar/SearchBar";
 import {AuthContext} from "../../context/AuthContext";
+import Button from "../button/Button";
 
 
 const Navbar = () => {
     const navigate = useNavigate();
     const  {isAuth, logout} = useContext(AuthContext)
+
     function handleLogout () {
-        logout ()
+        console.log("handlelogout clicked")
+        logout()
     }
 
     return (
@@ -23,7 +26,7 @@ const Navbar = () => {
                     <div>
                         { isAuth ?
                             <>
-                            <button type = "button" onClick={ handleLogout}> Logout </button>
+                            <Button type = "button"  onClick={handleLogout }> Logout </Button>
                             <NavLink to="/profile" className=" menu-right">Profile</NavLink>
                             </>
                             :

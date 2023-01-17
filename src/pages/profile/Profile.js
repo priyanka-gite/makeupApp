@@ -1,14 +1,13 @@
 import React, {useContext} from 'react';
-import {useNavigate} from "react-router-dom";
-import {AuthContext} from "../context/AuthContext";
+import {AuthContext} from "../../context/AuthContext";
+import './Profile.css'
 
 const Profile = () => {
     const {user: {username}} =useContext(AuthContext)
 
     return (
-        <div>
-            <p>Welcome <span>{username}</span></p>
-
+        <div className="message">
+            <h1>Welcome <span>{username}</span></h1>
         </div>
     );
 };

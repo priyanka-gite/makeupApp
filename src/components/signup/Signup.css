@@ -23,3 +23,8 @@
 .link-signup {
     cursor: pointer;
 }
+.each-box-margin{
+    margin: 10px;
+    height: 30px;
+    width: 300px;
+}

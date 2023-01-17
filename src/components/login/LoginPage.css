@@ -24,3 +24,8 @@
 .link-signin {
     cursor: pointer;
 }
+.each-box-margin-login{
+    margin: 10px;
+    height: 30px;
+    width: 300px;
+}

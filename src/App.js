@@ -8,15 +8,15 @@ import ProductsOverview from "./pages/productsoverview/ProductsOverview";
 import LoginPage from "./components/login/LoginPage";
 import Signup from "./components/signup/Signup";
 import Product from "./pages/product/Product";
-import Profile from "./pages/Profile";
+import Profile from "./pages/profile/Profile";
 import {AuthContext} from "./context/AuthContext";
 import Footer from "./components/footer/Footer";
 import Comparison from "./pages/comparison/Comparison";
 
 function App() {
-const[item,setItems] = useState([])
+const[item,setItems] = useState([]);
     const {isAuth} = useContext( AuthContext) ;
-    console.log(setItems)
+
     return (
         <div className="margin container">
             <Announcement/>
@@ -24,10 +24,8 @@ const[item,setItems] = useState([])
             <Routes>
                 <Route path= "/" element ={ <Home/>}/> }/>
                 <Route path='/signup' element={<Signup />} />
-
                 <Route path= "/productsoverview" element = <ProductsOverview
                 setItemshandler={setItems}/>/>
-
                 <Route path= "/login" element ={ <LoginPage/> }/>
                 <Route path= "/profile" element ={isAuth ? <Profile/> : <Navigate to="/"/>}/>
                 <Route path= "/productsoverview:product" element ={ <Product/> }/>

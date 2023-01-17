@@ -40,11 +40,13 @@ const Signup = () => {
 
                 <form className="form-class-signup" onSubmit={handleSubmit} noValidate="novalidate">
 
-                    <label htmlFor='email'>Email Address</label>
+                    <label htmlFor='email'></label>
                     <input
                         type='email'
                         name='email'
                         id='email'
+                        placeholder="Email Adress"
+                        className="each-box-margin"
                         value={email}
                         required
                         onChange={(e) =>
@@ -53,22 +55,26 @@ const Signup = () => {
                     />
 
 
-                    <label htmlFor='username'>Username</label>
+                    <label htmlFor='username'></label>
                     <input
                         type='text'
                         id='username'
                         name='username'
+                        placeholder="username"
+                        className="each-box-margin"
                         value={username}
                         minLength={6}
                         required
                         onChange={(e) => setUsername(e.target.value)}
                     />
 
-                    <label htmlFor='password'>Password</label>
+                    <label htmlFor='password'></label>
                     <input
                         type='password'
                         name='password'
                         id='password'
+                        placeholder="password"
+                        className="each-box-margin"
                         minLength={6}
                         required
                         value={password}

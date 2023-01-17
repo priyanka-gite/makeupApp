@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import './ProductCard.css'
 
 const ProductCard = ({product, addToCompare,removeFromCompare}) => {
-    const [checked,setChecked] = useState()
 
     const handleChange = (e) => {
         let isChecked = e.target.checked

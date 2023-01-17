@@ -5,6 +5,7 @@ import ProductCard from '../../components/productCard/ProductCard'
 import './ProductsOverview.css'
 import Filter from "../../components/filter/Filter";
 import Sorting from "../../components/Sorting";
+import Button from "../../components/button/Button";
 
 const ProductsOverview = ({setItemshandler}) => {
 
@@ -21,9 +22,10 @@ const ProductsOverview = ({setItemshandler}) => {
     const addToCompare = (product) => {
 
         if (selectedItems.length < 2) {
-
             selectedItems.push(product);
+            setItemshandler(selectedItems);
             console.log(selectedItems.length)
+            console.log(setItemshandler)
             return true;
         }
         return false;
@@ -37,7 +39,7 @@ const ProductsOverview = ({setItemshandler}) => {
     // const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
     // const currentProducts = data.slice(indexOfFirstProduct, indexOfLastProduct);
     // console.log(currentProducts);
-    setItemshandler(selectedItems);
+
 
     async function fetchData () {
         console.log("called fetch data");
@@ -129,7 +131,6 @@ const ProductsOverview = ({setItemshandler}) => {
                     </div>
 
                     {
-                        selectedItems ?
                             <button
                                 className="button"
                                 type="button"
@@ -138,7 +139,7 @@ const ProductsOverview = ({setItemshandler}) => {
                                 }
                                 }>
                                 COMPARE
-                            </button> : null
+                            </button>
                     }
 
                     {
