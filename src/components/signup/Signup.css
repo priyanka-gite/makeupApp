@@ -28,3 +28,10 @@
     height: 30px;
     width: 300px;
 }
+
+.error-message {
+    margin: 50px;
+    color: red;
+    font-weight: bold;
+    font-size: larger
+}

@@ -1,7 +1,7 @@
 import React, {useContext, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import authContext, {AuthContext} from "../../context/AuthContext";
+import {AuthContext} from "../../context/AuthContext";
 import './LoginPage.css'
 import Button from "../button/Button";
 
@@ -37,42 +37,42 @@ const Login = () => {
             }
             {!loading &&
                 <>
-                <h2>Login </h2>
+                    <h2>Login </h2>
 
-                <form className="form-class" onSubmit={handleLogin}>
-                    <label htmlFor='username'></label>
-                    <input
-                        type='text'
-                        id="username"
-                        name='username'
-                        placeholder="username"
-                        className="each-box-margin"
-                        value={username}
-                        required
-                        onChange={(e) => setUsername(e.target.value)}
-                    />
+                    <form className="form-class" onSubmit={handleLogin}>
+                        <label htmlFor='username'></label>
+                        <input
+                            type='text'
+                            id="username"
+                            name='username'
+                            placeholder="username"
+                            className="each-box-margin"
+                            value={username}
+                            required
+                            onChange={(e) => setUsername(e.target.value)}
+                        />
 
-                    <label htmlFor='password'></label>
-                    <input
-                        type='password'
-                        name='password'
-                        id='password'
-                        placeholder="password"
-                        className="each-box-margin"
-                        minLength={6}
-                        required
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                    <Button className="login-btn">SIGN IN</Button>
-                    <p>
-                        Don't have an account?{" "}
-                        <span className='link link-signin' onClick={gotoSignUpPage}>
+                        <label htmlFor='password'></label>
+                        <input
+                            type='password'
+                            name='password'
+                            id='password'
+                            placeholder="password"
+                            className="each-box-margin"
+                            minLength={6}
+                            required
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                        <Button className="login-btn">SIGN IN</Button>
+                        <p>
+                            Don't have an account?{" "}
+                            <span className='link link-signin' onClick={gotoSignUpPage}>
                         Sign up
                     </span>
-                    </p>
-                </form>
-            </>
+                        </p>
+                    </form>
+                </>
             }
         </div>
     );

@@ -19,19 +19,20 @@ const Navbar = () => {
         <>
             <nav className= "navbar-main-container">
                 <div className= "middle">
-                    <SearchBar/>
+                    <SearchBar />
                     <p className="center" onClick={(()=>{
                         navigate("/")
                     })}><span className="name">BE </span>You.</p>
                     <div>
-                        { isAuth ?
+                        {isAuth ?
                             <>
-                            <Button type = "button"  onClick={handleLogout }> Logout </Button>
+                            <button type = "button"  className="button" onClick={handleLogout}> Logout </button>
                             <NavLink to="/profile" className=" menu-right">Profile</NavLink>
                             </>
                             :
                             <>
                                 <div className="right">
+                                    <NavLink to="/productsoverview" className="menu-right">All PRODUCTS</NavLink>
                                     <NavLink to="/signup" className=" menu-right">SIGNUP</NavLink>
                                     <NavLink to="/login" className=" menu-right">LOGIN</NavLink>
                                 </div>

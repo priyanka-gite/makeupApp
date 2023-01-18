@@ -3,8 +3,8 @@
     height: 120px;
     /*background-color: rgba(64, 64, 64, 0.04);*/
     background-color: #f2fefe;
-    padding: 10px 20px;
-    flex-wrap: wrap;
+    padding: 10px 30px 5px 20px;
+
 
 }
 /*navigation main elements of flexbox*/
@@ -12,6 +12,8 @@
 display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex: 1;
+    flex-wrap: wrap;
 
 }
 .left{
@@ -58,11 +60,6 @@ display: flex;
     font-size: 50px;
 }
 a:link{
-    color: black;
-}
-
-/* visited link */
-a:visited {
     color: black;
 }
 

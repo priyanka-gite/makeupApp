@@ -6,10 +6,7 @@ import Button from "../../components/button/Button";
 const Comparison = ({itemsHandler}) => {
     console.log(itemsHandler)
     const navigate = useNavigate();
-
-
     return (
-
         <>
             {
                 < div className="compare-outer-box" >
@@ -32,9 +29,8 @@ const Comparison = ({itemsHandler}) => {
                     }
                 </div>
             }
-
                 <Button className="btn" onClick={(() => {
-                    navigate(-1)
+                    navigate(-1);
                 })}>
                     Back
                 </Button>

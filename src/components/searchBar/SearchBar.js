@@ -12,6 +12,9 @@ const SearchBar = () => {
         e.preventDefault();//without this page is reloaded and we lose our current state
         navigate("/productsoverview",{state:{brand:query}})
     }
+    function onSearch (searchTerm) {
+
+    }
     return (
         // <div  className="search"      >
         <form onSubmit={onFormSubmit} className="search">
@@ -28,7 +31,7 @@ const SearchBar = () => {
             />
             <SearchIcon className="icon"/>
 
-            <button className="search-button">
+            <button className="search-button" onClick={()=>onSearch(query)}>
                 Search
             </button>
         </form>

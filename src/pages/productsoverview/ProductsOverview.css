@@ -41,5 +41,16 @@ flex-direction: row;
     margin: 20px;
     padding: 5px;
     font-weight: bold;
-
+}
+.message-log{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.message{
+    margin: 50px;
+    color: red;
+    font-weight: bold;
+    font-size: larger;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import './Signup.css'
@@ -8,29 +8,40 @@ const Signup = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const[role, setRole]= useState("user")
-    const [error,setError] =useState(false)
+    const [error,setError] =useState(null)
     const [loading,toggleLoading] =useState(false)
     const navigate = useNavigate();
-
+    const controller =  new AbortController();
 
     async function handleSubmit (e) {
-        console.log("user is registered")
         e.preventDefault();
-        toggleLoading(true)
+        toggleLoading(true);
 
-        try{ const res = axios.post("https://frontend-educational-backend.herokuapp.com/api/auth/signup", {email: email ,username: username,role : role ,password : password} )
-            setError(false)
-            console.log(res) }
-        catch (error){
-            console.error(error)
-            setError(true)
+        try{ const res = await axios.post("https://frontend-educational-backend.herokuapp.com/api/auth/signup", {email: email ,username: username,role : role ,password : password} )
+            console.log(res)
+           if(!(res.status === 200)) {
+               setError("Failed to Fetch the data")
+           }
+        }
+        catch (err){
+            setError(err.response.data.message)
         }
         toggleLoading(false)
     }
+    useEffect(()=>{
+        void handleSubmit();
+        return function cleanup() {
+            controller.abort(); // <--- request annuleren
+        }
+    },[email,username,password,role])
+
     const gotoLoginPage = () => navigate("/login");
 
     return (
         <div className="outerClass-signup ">
+            {
+                error &&  <p className="error-message"> {error}</p>
+            }
             {
                 loading && <span>Please wait while your page is loading</span>
             }

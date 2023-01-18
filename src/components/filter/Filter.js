@@ -21,7 +21,7 @@ const Filter = () => {
             <form className="outer-box" onSubmit={onSubmit}>
 
                 <div className="each-box font">   Filter By: </div>
-                <label className="font" htmlFor="brand">Brands:</label>
+                <label className="font" htmlFor="brand"></label>
                 <br/>
                 <input
                     className="each-box font"
@@ -35,21 +35,21 @@ const Filter = () => {
                     }}>
                 </input>
                 <br/>
-                <label className="font" htmlFor="product_type">TYPE:</label>
+                <label className="font" htmlFor="product_type"></label>
                 <br/>
                 <input
                     className="each-box font"
                     type="text"
                     name="product_type"
-                    id="product_type"          placeholder="Blush/mascara/foundation/lipsticlk"
+                    id="product_type"          placeholder="Blush/mascara/foundation/lipstick"
                     value={inputType}
                     onChange= {(e)=>{
                         setInputType(e.target.value)
                         console.log(e.target.value)
                     }}>
                 </input>
-                <div className="font">PRICE:</div>
-                <label className="font" htmlFor="minPrice"> Min:</label>
+                <div className="font"></div>
+                <label className="font" htmlFor="minPrice"> Min Price:</label>
                 <input
                     className="each-box font"
                     type="number"
@@ -63,7 +63,7 @@ const Filter = () => {
                     }}>
                 </input>
 
-                <label className="font" htmlFor="maxPrice"> Max:</label>
+                <label className="font" htmlFor="maxPrice"> Max Price:</label>
                 <input
                     className="each-box font"
                     type="number"
