@@ -13,7 +13,6 @@ const SearchBar = () => {
         navigate("/productsoverview",{state:{brand:query}})
     }
     function onSearch (searchTerm) {
-
     }
     return (
         // <div  className="search"      >

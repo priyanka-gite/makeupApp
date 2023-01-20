@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import "./Sorting.css"
 
 const Sorting = ({setSortOrderHandler}) => {
     function changeAscHandle(e) {
@@ -9,7 +10,7 @@ const Sorting = ({setSortOrderHandler}) => {
             <div>
                 <label htmlFor="price">Sort by Price: </label>
 
-                <select  name="price" id="price" onChange={changeAscHandle}>
+                <select className="sorting-select-box" name="price" id="price" onChange={changeAscHandle}>
                     <option value="" defaultValue="-">-</option>
                     <option value="asc"> Low to High</option>
                     <option value="dsc"> High to Low</option>

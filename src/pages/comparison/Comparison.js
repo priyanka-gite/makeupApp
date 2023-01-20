@@ -29,11 +29,11 @@ const Comparison = ({itemsHandler}) => {
                     }
                 </div>
             }
-                <Button className="btn" onClick={(() => {
+                <button className="btn" onClick={(() => {
                     navigate(-1);
                 })}>
                     Back
-                </Button>
+                </button>
         </>
     );
 };

@@ -15,6 +15,7 @@ import Comparison from "./pages/comparison/Comparison";
 
 function App() {
 const[item,setItems] = useState([]);
+
     const {isAuth} = useContext( AuthContext) ;
     return (
         <div className="margin container">

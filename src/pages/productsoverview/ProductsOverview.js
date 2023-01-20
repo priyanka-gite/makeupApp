@@ -5,16 +5,17 @@ import ProductCard from '../../components/productCard/ProductCard'
 import './ProductsOverview.css'
 import Filter from "../../components/filter/Filter";
 import Sorting from "../../components/sorting/Sorting";
-
+import "../comparison/Comparison.css"
 
 
 const ProductsOverview = ({setItemshandler}) => {
 
-    const [data,setData] = useState({});
+    const [data,setData] = useState([]);
     const [sortOrder,setSortOrder] =useState("");
     const [loading,toggleLoading] =useState(false);
     const [selectedItems] = useState([]);
-
+const[showButton,setShowButton]=useState(false)
+    const [dataHandler,setDataHandler] = useState([]);
 
     const controller =  new AbortController();
     const location = useLocation();
@@ -24,15 +25,15 @@ const ProductsOverview = ({setItemshandler}) => {
         if (selectedItems.length < 2) {
             selectedItems.push(product);
             setItemshandler(selectedItems);
-            console.log(selectedItems.length);
-            console.log(setItemshandler)
+            setShowButton(true)
+
             return true;
         }
         return false;
     }
     const removeFromCompare = (product) => {
         selectedItems.pop(product);
-        console.log("removed");
+        setShowButton(false)
     }
     async function fetchData () {
         console.log("called fetch data");
@@ -69,6 +70,7 @@ const ProductsOverview = ({setItemshandler}) => {
             const response = await axios.get(fullUrl);
             console.log((response.data));
             setData(response.data);
+            setDataHandler(response.data)
                     }
         catch (e) {
             console.error(e);
@@ -107,18 +109,17 @@ const ProductsOverview = ({setItemshandler}) => {
             {!loading  && data.length>0 && <div className="outer-container">
 
                 <aside className="left-side">
-                    <Filter/>
+                    <Filter dataHandler={data} />
                 </aside>
-
                 <aside className="right-side">
                     <div className="sort">
                         <Sorting setSortOrderHandler={sorting}
                         />
                     </div>
 
-                    { selectedItems ===2 &&
+                    {  showButton &&
                         <button
-                            className="button"
+                            className="btn"
                             type="button"
                             onClick={() => {
                                 navigate("/comparison");
@@ -127,6 +128,7 @@ const ProductsOverview = ({setItemshandler}) => {
                             COMPARE
                         </button>
                     }
+
                     {
                         Object.keys(data).length > 0 &&
                         <div className="right-side-container">

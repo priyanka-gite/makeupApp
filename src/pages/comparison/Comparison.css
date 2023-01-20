@@ -36,4 +36,10 @@
 .btn {
     color: black;
     background-color: #f2fefe;
+   display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 100px;
 }

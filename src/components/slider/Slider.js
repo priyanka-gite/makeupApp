@@ -4,6 +4,7 @@ import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import {sliderItems} from "../../data";
 import {useNavigate} from "react-router-dom";
+import Banner from "../Banner";
 
 const Container = styled.div`
     width: 100%;
@@ -41,7 +42,7 @@ const Wrapper = styled.div`
 const Slide = styled.div`
   display: flex;
   align-items: center;
-  width: 100vw;
+  width: 50vw;
   height: 100vh;
   background-color: #${props => props.bg};
 `
@@ -49,14 +50,16 @@ const ImageContainer = styled.div`
   flex: 1;
 `
 const Image = styled.img`
-  height: 500px;
-  width: 500px;
-  padding-left: 40%;
+  height: 100%;
+  width: 100%;
+  padding-left: 10%;
 `
 const InfoContainer = styled.div`
   flex: 1;
-  padding: 35%;
-  margin-right: 40px;
+  padding-left: 10%;
+  margin-right: 10px;
+  padding-right: 10%;
+ 
 `
 const Title = styled.h1`
   font-size: 70px;
@@ -83,21 +86,24 @@ const Slider = () => {
     const navigate = useNavigate();
     const handleClick = (direction) =>{
         if (direction==="left") {
-            setSlideIndex(slideIndex>0 ? slideIndex-1 : 9)
+            setSlideIndex(slideIndex>0 ? slideIndex-1 : 4)
         } else {
-            setSlideIndex(slideIndex < 9 ? slideIndex +1 : 0);
+            setSlideIndex(slideIndex < 4 ? slideIndex +1 : 0);
         }
     }
 
     return (
         <Container>
+
             <Arrow direction="left" onClick={()=>handleClick("left")}>
                 <ArrowLeftIcon/>
             </Arrow>
             <Wrapper slideIndex = {slideIndex}>
+
                 {sliderItems.map((item)=>{
                         return (
                             <Slide key={item.id} bg ={item.bg}>
+
                                 <ImageContainer>
                                     <Image src={item.img}/>
                                 </ImageContainer>

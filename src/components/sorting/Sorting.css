@@ -1,7 +1,8 @@
 .sorting-select-box {
     height: 30px;
-    background-color: transparent;
+    background-color: white;
     margin: 20px;
     padding: 5px;
     font-weight: bold;
+    width: 200px;
 }
