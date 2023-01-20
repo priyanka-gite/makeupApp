@@ -38,18 +38,18 @@ const Signup = () => {
 
     const gotoLoginPage = () => navigate("/login");
 
-    function emailValidation () {
+    // function emailValidation () {
 
-        const regEx =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        if (regEx.(email)) {
-            console.log("Email is Valid")
-            setMessage("Email is Valid")
-        } else if (!regEx.match(email) && email=== "") {
-            console.log("Email is not valid")
-            setMessage("Email is not valid");
-        } else {
-            setMessage("")
-        }}
+        // const regEx =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        // if (regEx.(email)) {
+        //     console.log("Email is Valid")
+        //     setMessage("Email is Valid")
+        // } else if (!regEx.match(email) && email=== "") {
+        //     console.log("Email is not valid")
+        //     setMessage("Email is not valid");
+        // } else {
+        //     setMessage("")
+        // }}
     return (
         <div className="outerClass-signup ">
             {
@@ -63,7 +63,7 @@ const Signup = () => {
                 <>
                     <h2>Sign up </h2>
 
-                    <form className="form-class-signup" onSubmit={emailValidation&&handleSubmit}>
+                    <form className="form-class-signup" onSubmit={handleSubmit}>
                         <label htmlFor='email'></label>
                         <input
                             type='email'

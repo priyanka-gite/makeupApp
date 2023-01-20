@@ -18,10 +18,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    width: 100%;
-    padding: 30px;
-    background-color: #f2fefe;
+
 }
 .link{
     font-weight: bold;
@@ -42,4 +39,14 @@
     align-items: center;
     height: 30px;
     width: 100px;
+}
+.main-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    width: 100%;
+    background-color: #f2fefe;
+    border: 2px teal solid;
 }

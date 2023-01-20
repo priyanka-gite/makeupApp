@@ -1,9 +1,10 @@
 import React from 'react';
+import "../components/Banner.css"
 
 const Banner = () => {
     return (
         <div>
-            <h1>...Because beauty is the reflection of an attitude</h1>
+            <h1>Define Beauty. Define You</h1>
         </div>
     );
 };

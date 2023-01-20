@@ -9,31 +9,35 @@ const Comparison = ({itemsHandler}) => {
     return (
         <>
             {
-                < div className="compare-outer-box" >
-                    {
-                        itemsHandler.map((product) => {
-                            return (
-                                <div className="product" key={`${product.id}`}
-                                >
-                                    <p className="margin link">
-                                        {product.name}
-                                    </p>
-                                    <img src={product.image_link} alt="products" className="image-resize"/>
-                                    <p className="margin">
-                                        Price: {product.price}{product.price_sign}
-                                    </p>
-                                    <a href={product.product_link} target="_blank" className="margin link " > SHOP NOW </a>
-                                </div>
-                            )
-                        })
-                    }
+                <div className="main-box">
+                    < div className="compare-outer-box" >
+                        {
+                            itemsHandler.map((product) => {
+                                return (
+                                    <div className="product" key={`${product.id}`}
+                                    >
+                                        <p className="margin link">
+                                            {product.name}
+                                        </p>
+                                        <img src={product.image_link} alt="products" className="image-resize"/>
+                                        <p className="margin">
+                                            Price: {product.price}{product.price_sign}
+                                        </p>
+                                        <a href={product.product_link} target="_blank" className="margin link " > SHOP NOW </a>
+                                    </div>
+                                )
+                            })
+                        }
+
+                    </div>
+                    <button className="btn" onClick={(() => {
+                        navigate(-1);
+                    })}>
+                        Back
+                    </button>
                 </div>
             }
-                <button className="btn" onClick={(() => {
-                    navigate(-1);
-                })}>
-                    Back
-                </button>
+
         </>
     );
 };

@@ -11,6 +11,7 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
     const [loading,toggleLoading] =useState(false);
+
     const{login} =useContext(AuthContext);
 
     async function handleLogin (e) {
@@ -21,7 +22,7 @@ const Login = () => {
                 {username: username,
                     password : password});
 
-            login(response.data.accessToken,username);
+            login(response.data);
             //    response.data.accessToken
         } catch (e) {
             console.error(e);

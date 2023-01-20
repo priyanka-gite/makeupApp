@@ -13,22 +13,22 @@ export const sliderItems = [
         id: 1,
         type: "Blush",
         img: blush,
-        desc: "Dont Compromise on your style",
-        bg: "aef6f7",
+        desc: "Walk with Red Cheeks.",
+        bg: "503C5C",
     },
     {
         id: 2,
         type: "Bronzer",
         img: bronzer,
-        desc: "Dont Compromise on your style",
-        bg: "f1bcd5",
+        desc: "Live with Glow.",
+        bg: "E4D18A",
     },
 
     {
         id: 3,
         type: "Eyebrows",
         img: eyebrow,
-        desc: "Dont Compromise on your style",
+        desc: "Redefine beauty",
         bg: "aef6f7",
     },
 
@@ -44,7 +44,7 @@ export const sliderItems = [
         type: "Eyeshadow",
         img: eyeshadow,
         desc: "Glow-MimeticsTM technology, the incredibly luminous universal neutrals recreate the radiance of a flawless eyelid.",
-        bg: "aef6f7",
+        bg: "f8ca9d",
     },
 
     {
@@ -52,7 +52,7 @@ export const sliderItems = [
         type: "Foundation",
         img: foundation,
         desc: "Now available in 10 more gorgeous shades",
-        bg: "f1bcd5",
+        bg: "8ec9bb",
     },
 
     {
@@ -60,7 +60,7 @@ export const sliderItems = [
         type: "Lipliner",
         img: lipliner,
         desc: "Lip pencil that glides on easily and prevents featheing",
-        bg: "aef6f7",
+        bg: "fb8e7e",
     },
 
     {
@@ -68,14 +68,14 @@ export const sliderItems = [
         type: "Lipstick",
         img: lipstick,
         desc: "Vamp up your look instantly with our smooth and smoldering lip creams",
-        bg: "f1bcd5",
+        bg: "f2cf59",
     },
     {
         id: 9,
         type: "Mascara",
         img:  mascara,
         desc: "Featuring seven different brushes",
-        bg: "aef6f7",
+        bg: "6fc0ab",
     },
 
     {
@@ -83,7 +83,7 @@ export const sliderItems = [
         type: "NailPolish",
         img: nailpolish,
         desc:  "Discover the new-generation Dior Vernis and its ingenious formula that plays up the gel effect.",
-        bg: "f1bcd5",
+        bg: "ebecf0",
     }
 
 ]

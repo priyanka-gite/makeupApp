@@ -18,7 +18,7 @@ const[item,setItems] = useState([]);
 
     const {isAuth} = useContext( AuthContext) ;
     return (
-        <div className="margin container">
+        <div>
             <Announcement/>
             <Navbar/>
             <Routes>
