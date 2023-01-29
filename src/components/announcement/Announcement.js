@@ -3,9 +3,9 @@ import './Announcement.css'
 
 const Announcement = () => {
     return (
-        <div className="announce">
+        <p className="announce">
 Hurry...we are now shipping Worldwide!
-        </div>
+        </p>
     );
 };
 

@@ -2,14 +2,13 @@ import React, {useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import './Filter.css'
 import Button from "../button/Button";
-import {brands} from "../../brands"
-
+import {brands} from "../../data/brands"
 
 const Filter = () => {
     const[inputValue,setInputValue]= useState("");
     const[inputType, setInputType]= useState("")
-    const[minInput, setMinInput]= useState(null)
-    const[maxInput, setMaxInput]= useState(null)
+    const[minInput, setMinInput]= useState("")
+    const[maxInput, setMaxInput]= useState("")
     const navigate = useNavigate();
 
     const onSubmit = (e) => {
@@ -28,7 +27,7 @@ const Filter = () => {
                     <option  className="each-box font" >--SELECT--</option>
                     {brands.map((product)=>{
                         return(
-                            <option  className="each-box font">{product.type}</option>
+                            <option key={product.id} className="each-box font">{product.type}</option>
                         )
                     })
                     }

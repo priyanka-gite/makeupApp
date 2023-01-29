@@ -3,19 +3,21 @@ import './SearchBar.css'
 import {useNavigate} from "react-router-dom";
 import SearchIcon from '@mui/icons-material/Search';
 
+
+
 const SearchBar = () => {
     const [query,setQuery] = useState("");
     const navigate = useNavigate();
 
     function onFormSubmit  (e) {
-        console.log('submitted')
-        e.preventDefault();//without this page is reloaded and we lose our current state
+        e.preventDefault();
         navigate("/productsoverview",{state:{brand:query}})
     }
-    function onSearch (searchTerm) {
+    function onSearch(query) {
+        console.log("searching products")
     }
+
     return (
-        // <div  className="search"      >
         <form onSubmit={onFormSubmit} className="search">
             <label form="search-bar"></label>
             <input
@@ -31,11 +33,9 @@ const SearchBar = () => {
             <SearchIcon className="icon"/>
 
             <button className="search-button" onClick={()=>onSearch(query)}>
-                Search
+                SEARCH
             </button>
         </form>
-        // </div>
-
     );
 };
 

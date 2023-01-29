@@ -36,11 +36,7 @@ const ProductCard = ({product, addToCompare,removeFromCompare}) => {
                 </div>
 
             </form>
-
-
         </section>
-
-        // </div>
     );
 };
 

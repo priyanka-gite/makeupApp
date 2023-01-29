@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {useLocation, useNavigate} from 'react-router-dom';
+import {Link, useLocation, useNavigate} from 'react-router-dom';
 import axios from "axios";
 import ProductCard from '../../components/productCard/ProductCard'
 import './ProductsOverview.css'
@@ -100,7 +100,7 @@ const[showButton,setShowButton]=useState(false)
     return (
         <>
             {
-               !loading && data.length <= 0 && <span className="message"> No Products Found </span>
+                !loading && data.length <= 0 && <span className="message"> No Products Found ... back to <Link to="/productsoverview"> homepage</Link></span>
             }
             {
                 loading && <span className="message">Please wait while your page is loading</span>

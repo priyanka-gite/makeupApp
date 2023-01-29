@@ -3,9 +3,7 @@
     height: 80px;
     /*background-color: rgba(64, 64, 64, 0.04);*/
     background-color: #f2fefe;
-    padding: 10px 30px 5px 20px;
-
-
+    padding: 30px 30px 5px 20px;
 }
 /*navigation main elements of flexbox*/
 .nav-outer-box {
@@ -39,7 +37,7 @@ display: flex;
     font-size: x-large;
     list-style: none;
     cursor: pointer;
-    margin-left: 30px;
+    /*margin-left: 30px;*/
 }
 
 .right {
@@ -57,12 +55,8 @@ display: flex;
     color: black;
 }
 .name{
-    font-size: 50px;
+    font-size: 70px;
 }
-a:link{
-    color: black;
-}
-
 /* mouse over link */
 a:hover{
     color: teal;
@@ -70,5 +64,5 @@ a:hover{
 
 /* selected link */
 a:active{
-   color: lightseagreen;
+   color: teal;
 }

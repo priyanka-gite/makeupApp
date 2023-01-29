@@ -15,8 +15,8 @@ import Comparison from "./pages/comparison/Comparison";
 
 function App() {
 const[item,setItems] = useState([]);
-
     const {isAuth} = useContext( AuthContext) ;
+
     return (
         <div>
             <Announcement/>
@@ -28,7 +28,7 @@ const[item,setItems] = useState([]);
                 setItemshandler={setItems}/>/>
                 <Route path= "/login" element ={ <LoginPage/> }/>
                 <Route path= "/profile" element ={isAuth ? <Profile/> : <Navigate to="/"/>}/>
-                <Route path= "/productsoverview:product" element ={ <Product/> }/>
+                {/*<Route path= "/productsoverview:product" element ={ <Product/> }/>*/}
                 <Route path= "/comparison" element ={ <Comparison itemsHandler={item}/> }/>
             </Routes>
             <Footer/>

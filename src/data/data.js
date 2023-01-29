@@ -1,13 +1,13 @@
-import blush from './assets/icons/blush.png'
-import eyebrow from './assets/icons/eyebrows.png'
-import eyeliner from './assets/icons/eyeliner.png'
-import eyeshadow from './assets/icons/eyeshadow.png'
-import foundation from './assets/icons/foundation.png'
-import lipliner from './assets/icons/lipliner.png'
-import lipstick from './assets/icons/lipstick.png'
-import nailpolish from './assets/icons/nailpolish.png'
-import bronzer from './assets/icons/bronzer.png'
-import mascara from './assets/icons/mascara.png'
+import blush from '../assets/icons/blush.png'
+import eyebrow from '../assets/icons/eyebrows.png'
+import eyeliner from '../assets/icons/eyeliner.png'
+import eyeshadow from '../assets/icons/eyeshadow.png'
+import foundation from '../assets/icons/foundation.png'
+import lipliner from '../assets/icons/lipliner.png'
+import lipstick from '../assets/icons/lipstick.png'
+import nailpolish from '../assets/icons/nailpolish.png'
+import bronzer from '../assets/icons/bronzer.png'
+import mascara from '../assets/icons/mascara.png'
 export const sliderItems = [
     {
         id: 1,

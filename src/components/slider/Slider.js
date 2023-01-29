@@ -2,10 +2,8 @@ import React, {useState} from 'react';
 import styled from "styled-components";
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
-import {sliderItems} from "../../data";
+import {sliderItems} from "../../data/data";
 import {useNavigate} from "react-router-dom";
-import Banner from "../Banner";
-
 const Container = styled.div`
     width: 100%;
   height: 100vh;

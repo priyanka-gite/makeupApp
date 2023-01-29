@@ -1,19 +1,18 @@
 import React, {useEffect, useState} from 'react';
-import Navbar from "../../components/navbar/Navbar";
-import Announcement from "../../components/announcement/Announcement";
 import Slider from "../../components/slider/Slider";
-import ProductsOverview from "../productsoverview/ProductsOverview";
-import SearchBar from "../../components/searchBar/SearchBar";
-import Banner from "../../components/Banner";
-
+import brush from '../../../src/assets/icons/brushes.png'
+import palete from '../../../src/assets/icons/pallete.png'
+import "./Home.css"
 const Home = () => {
-
     return (
-        <div>
-
-            <Slider />
-        </div>
-    );
+        <section>
+            <article className="wrapper">
+            <img src={brush} alt="brush" className="image-left"/>
+                <img src={palete} alt="palete" className="image-right" />
+            </article>
+                    <Slider />
+        </section>
+);
 };
 
 export default Home;

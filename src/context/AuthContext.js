@@ -13,7 +13,6 @@ const AuthContextProvider = ({children}) => {
         user: null,
         status: "pending"
     });
-
     useEffect(() => {
         const storedToken = localStorage.getItem('token')
         const username = localStorage.getItem('username')
