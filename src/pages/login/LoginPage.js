@@ -3,10 +3,9 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import {AuthContext} from "../../context/AuthContext";
 import './LoginPage.css'
-import Button from "../button/Button";
+import Button from "../../components/button/Button";
 
 const Login = () => {
-
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
@@ -39,7 +38,6 @@ const Login = () => {
             {!loading &&
                 <>
                     <h2>Login </h2>
-
                     <form className="form-class" onSubmit={handleLogin}>
                         <label htmlFor='username'></label>
                         <input

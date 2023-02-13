@@ -1,27 +1,27 @@
 import blush from '../assets/icons/blush.png'
 import eyebrow from '../assets/icons/eyebrows.png'
 import eyeliner from '../assets/icons/eyeliner.png'
-import eyeshadow from '../assets/icons/eyeshadow.png'
+import eyeshadow from '../assets/icons/eyeshadoe.png'
 import foundation from '../assets/icons/foundation.png'
 import lipliner from '../assets/icons/lipliner.png'
 import lipstick from '../assets/icons/lipstick.png'
-import nailpolish from '../assets/icons/nailpolish.png'
+import nailpolish from '../assets/icons/nails.png'
 import bronzer from '../assets/icons/bronzer.png'
-import mascara from '../assets/icons/mascara.png'
+import mascara from '../assets/icons/masc.jpg'
 export const sliderItems = [
     {
         id: 1,
         type: "Blush",
         img: blush,
         desc: "Walk with Red Cheeks.",
-        bg: "503C5C",
+        bg: "white",
     },
     {
         id: 2,
         type: "Bronzer",
         img: bronzer,
         desc: "Live with Glow.",
-        bg: "E4D18A",
+        bg: "white",
     },
 
     {
@@ -29,22 +29,22 @@ export const sliderItems = [
         type: "Eyebrows",
         img: eyebrow,
         desc: "Redefine beauty",
-        bg: "aef6f7",
+        bg: "white",
     },
 
     {
         id: 4,
         type: "Eyeliner",
         img:eyeliner,
-        desc: "Having it all is possible with this incredibly edgy new makeup weapon.",
-        bg: "f1bcd5" ,
+        desc: "Having it all is possible ..",
+        bg: "white" ,
     },
     {
         id: 5,
         type: "Eyeshadow",
         img: eyeshadow,
-        desc: "Glow-MimeticsTM technology, the incredibly luminous universal neutrals recreate the radiance of a flawless eyelid.",
-        bg: "f8ca9d",
+        desc: "recreate the radiance of a flawless eyelid.",
+        bg: "white",
     },
 
     {
@@ -52,7 +52,7 @@ export const sliderItems = [
         type: "Foundation",
         img: foundation,
         desc: "Now available in 10 more gorgeous shades",
-        bg: "8ec9bb",
+        bg: "white",
     },
 
     {
@@ -60,30 +60,30 @@ export const sliderItems = [
         type: "Lipliner",
         img: lipliner,
         desc: "Lip pencil that glides on easily and prevents featheing",
-        bg: "fb8e7e",
+        bg: "white",
     },
 
     {
         id: 8,
         type: "Lipstick",
         img: lipstick,
-        desc: "Vamp up your look instantly with our smooth and smoldering lip creams",
-        bg: "f2cf59",
+        desc: "Vamp up your look instantly...",
+        bg: "white",
     },
     {
         id: 9,
         type: "Mascara",
         img:  mascara,
         desc: "Featuring seven different brushes",
-        bg: "6fc0ab",
+        bg: "white",
     },
 
     {
         id: 10,
         type: "NailPolish",
         img: nailpolish,
-        desc:  "Discover the new-generation Dior Vernis and its ingenious formula that plays up the gel effect.",
-        bg: "ebecf0",
+        desc:  "Discover the new-generation formula.",
+        bg: "white",
     }
 
 ]

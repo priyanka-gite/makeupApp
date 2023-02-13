@@ -26,7 +26,6 @@ const[showButton,setShowButton]=useState(false)
             selectedItems.push(product);
             setItemshandler(selectedItems);
             setShowButton(true)
-
             return true;
         }
         return false;
@@ -59,15 +58,15 @@ const[showButton,setShowButton]=useState(false)
         }
         toggleLoading(true)
         try {
-            const baseUrl = `https://makeup-api.herokuapp.com/api/v1/products.json`;
-            let fullUrl = "";
+            const BASE_URL = `https://makeup-api.herokuapp.com/api/v1/products.json`;
+            let FULL_URL = "";
             if (queryString) {
-                fullUrl = baseUrl + "?" + queryString;
+                FULL_URL = BASE_URL + "?" + queryString;
             }else
             {
-                fullUrl = baseUrl;
+                FULL_URL = BASE_URL;
             }
-            const response = await axios.get(fullUrl);
+            const response = await axios.get(FULL_URL);
             console.log((response.data));
             setData(response.data);
             setDataHandler(response.data)
@@ -82,7 +81,7 @@ const[showButton,setShowButton]=useState(false)
         return function cleanup() {
             controller.abort(); // <--- request annuleren
         }
-    },[location])
+    },[location.state])
 
     function sorting (sorts ) {
         console.log(data);
@@ -100,7 +99,7 @@ const[showButton,setShowButton]=useState(false)
     return (
         <>
             {
-                !loading && data.length <= 0 && <span className="message"> No Products Found ... back to <Link to="/productsoverview"> homepage</Link></span>
+                !loading && data.length <= 0 && <span className="message"> No Products Found ... back to <Link to="/"> homepage</Link></span>
             }
             {
                 loading && <span className="message">Please wait while your page is loading</span>

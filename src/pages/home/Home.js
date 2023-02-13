@@ -10,7 +10,8 @@ const Home = () => {
             <img src={brush} alt="brush" className="image-left"/>
                 <img src={palete} alt="palete" className="image-right" />
             </article>
-                    <Slider />
+            <Slider/>
+
         </section>
 );
 };

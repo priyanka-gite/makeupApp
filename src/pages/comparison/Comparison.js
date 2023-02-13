@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import './Comparison.css'
-import Button from "../../components/button/Button";
-
 const Comparison = ({itemsHandler}) => {
     console.log(itemsHandler)
     const navigate = useNavigate();

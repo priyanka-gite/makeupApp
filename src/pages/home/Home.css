@@ -3,10 +3,10 @@
     flex-direction: row;
 }
 .image-left {
-    width: 51vw;
-    height: 70vh;
+    width: 50vw;
+    height: 50vh;
 }
 .image-right{
     width: 50vw;
-    height: 70vh;
+    height: 50vh;
 }

@@ -20,8 +20,11 @@ const Signup = () => {
         toggleLoading(true);
         try{ const res = await axios.post("https://frontend-educational-backend.herokuapp.com/api/auth/signup", {email: email ,username: username,role : role ,password : password} )
             console.log(res)
-            if(!(res.status === 200)) {
-                setError("Failed to Fetch the data")
+            if((res.status === 200)) {
+                setError("User registered successfully")
+            }
+            else{
+                setError("Please try again with different credentials")
             }
         }
         catch (err){
@@ -30,7 +33,7 @@ const Signup = () => {
         toggleLoading(false)
     }
     useEffect(()=>{
-        void handleSubmit();
+        handleSubmit();
         return function cleanup() {
             controller.abort(); // <--- request annuleren
         }
@@ -82,7 +85,7 @@ const Signup = () => {
                             type='text'
                             id='username'
                             name='username'
-                            placeholder="test"
+                            placeholder="username"
                             className="each-box-margin"
                             value={username}
                             minLength={6}

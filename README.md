@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+The BE YOU APP.
+# Introduction
+Welcome to our BE YOU app. Are you tired of browsing endlessly and mindlessly through all the makeup products App and  still haven’t found that perfect shade of blush. Don’t worry anymore. We at BE YOU have curated the wide range of perfect shades that suits every skin tone. Dive into the world of beautiful colours and find your perfect shade. In this app you can find collection of several beauty brands for every budget. It is also possible to filter the number of products based on types such as lipsticks, nail polish, mascara, eyeliner, eye shadow, blush and bronzer. You can also set your budget and app will give you results based on your price settings.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="C:\Users\rohit\Desktop\NOVI projects\REACT-homework\eindopdracht\src\assets\screenshots\2023-02-13.png"/>
 
-## Available Scripts
+# Getting Started
+Clone this repository using following command on your terminal.
 
-In the project directory, you can run:
+#git clone
 
+After cloning, open then project on your machine type below in terminal to install node modules.
+### `npm install`
+
+To run the application:
 ### `npm start`
 
-Runs the app in the development mode.\
+Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
+The page will reload when you make changes.
 You may also see any lint errors in the console.
 
-### `npm test`
+To stop the application press ctrl + c.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# API
+To make this application following API is used:
+`https://makeup-api.herokuapp.com/`
+There are three endpoints used in this application:
+1. API for the application : `http://makeup-api.herokuapp.com/api/v1/products.json`
+2. NOVI Backend is used for signing up and logging the user.
+a. sign up: `https://frontend-educational-backend.herokuapp.com/api/auth/signup`
+b. login:`https://frontend-educational-backend.herokuapp.com/api/auth/signin`
 
-### `npm run build`
+It is not required to make an API key to access this project.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# user details
+At this moment, it is only possible to view profile page after logging in. All other pages can be freely viewed by user. A user is registered only as user and not Admin.
+If user is registered succesfully, he/she can log in with following :
+1. username
+2. password
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Happy Coding!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
