@@ -33,7 +33,6 @@ const Signup = () => {
         toggleLoading(false)
     }
     useEffect(()=>{
-        handleSubmit();
         return function cleanup() {
             controller.abort(); // <--- request annuleren
         }
@@ -41,18 +40,17 @@ const Signup = () => {
 
     const gotoLoginPage = () => navigate("/login");
 
-    // function emailValidation () {
-
-        // const regEx =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        // if (regEx.(email)) {
-        //     console.log("Email is Valid")
-        //     setMessage("Email is Valid")
-        // } else if (!regEx.match(email) && email=== "") {
-        //     console.log("Email is not valid")
-        //     setMessage("Email is not valid");
-        // } else {
-        //     setMessage("")
-        // }}
+    function emailValidation() {
+        const regEx =  /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+        if (regEx.test(email)) {
+            console.log("Email is Valid")
+            setMessage("Email is Valid")
+        } else if (!regEx.test(email) && email!=="") {
+            console.log("Email is not valid")
+            setMessage("Email is not valid");
+        } else {
+            setMessage("")
+        }}
     return (
         <div className="outerClass-signup ">
             {
@@ -79,7 +77,7 @@ const Signup = () => {
                             onChange={(e) =>
                                 setEmail(e.target.value)
                             }
-                        />
+                        /> {message}
                         <label htmlFor='username'></label>
                         <input
                             type='text'
@@ -106,7 +104,7 @@ const Signup = () => {
                             onChange={(e) => setPassword(e.target.value)}
                         />
 
-                        <button className="signup-btn" type="submit" >SIGN UP</button>
+                        <button className="signup-btn" type="submit" onClick={emailValidation} >SIGN UP</button>
 
                         <p>
                             Already have an account?{" "}

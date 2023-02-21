@@ -7,14 +7,12 @@ import Filter from "../../components/filter/Filter";
 import Sorting from "../../components/sorting/Sorting";
 import "../comparison/Comparison.css"
 
-
 const ProductsOverview = ({setItemshandler}) => {
-
     const [data,setData] = useState([]);
     const [sortOrder,setSortOrder] =useState("");
     const [loading,toggleLoading] =useState(false);
     const [selectedItems] = useState([]);
-const[showButton,setShowButton]=useState(false)
+    const[showButton,setShowButton]=useState(false)
     const [dataHandler,setDataHandler] = useState([]);
 
     const controller =  new AbortController();
@@ -38,7 +36,6 @@ const[showButton,setShowButton]=useState(false)
         console.log("called fetch data");
         toggleLoading(true)
         let queryString = '';
-        // if statement here is for the error that location.state is empty. hence it works ahead only when location.state is filled.
         if(location.state) {
             // console.log(location)
             if (location.state.brand) {
@@ -66,11 +63,12 @@ const[showButton,setShowButton]=useState(false)
             {
                 FULL_URL = BASE_URL;
             }
-            const response = await axios.get(FULL_URL);
+            const response = await axios.get(FULL_URL, {
+                signal: controller.signal,});
             console.log((response.data));
             setData(response.data);
             setDataHandler(response.data)
-                    }
+        }
         catch (e) {
             console.error(e);
         }
@@ -79,7 +77,7 @@ const[showButton,setShowButton]=useState(false)
     useEffect(()=>{
         void fetchData();
         return function cleanup() {
-            controller.abort(); // <--- request annuleren
+            controller.abort();
         }
     },[location.state])
 

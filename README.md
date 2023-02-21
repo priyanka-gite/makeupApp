@@ -6,7 +6,6 @@ Welcome to our BE YOU app. Are you tired of browsing endlessly and mindlessly th
 
 # Getting Started
 Clone this repository using following command on your terminal.
-
 #git clone
 
 After cloning, open then project on your machine type below in terminal to install node modules.
