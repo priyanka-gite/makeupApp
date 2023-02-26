@@ -63,8 +63,7 @@ const ProductsOverview = ({setItemshandler}) => {
             {
                 FULL_URL = BASE_URL;
             }
-            const response = await axios.get(FULL_URL, {
-                signal: controller.signal,});
+            const response = await axios.get(FULL_URL);
             console.log((response.data));
             setData(response.data);
             setDataHandler(response.data)

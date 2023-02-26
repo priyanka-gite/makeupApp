@@ -10,7 +10,8 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  flex: 1;
 `
 const Arrow = styled.div`
   width: 50px;
@@ -46,6 +47,7 @@ const Slide = styled.div`
 `
 const ImageContainer = styled.div`
   flex: 1;
+  flex-wrap: nowrap;
 `
 const Image = styled.img`
   height: 70%;
@@ -58,6 +60,7 @@ const InfoContainer = styled.div`
   padding-left: 10%;
   margin-right: 10px;
   padding-right: 10%; 
+  flex-wrap: nowrap;
 `
 const Title = styled.h1`
   font-size: 70px;
