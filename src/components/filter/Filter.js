@@ -12,7 +12,7 @@ const Filter = () => {
     const navigate = useNavigate();
 
     const onSubmit = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         navigate("/productsoverview",{state:{brand:inputValue,product_type:inputType,price_greater_than: minInput,price_less_than:maxInput}
         })
     }
@@ -22,8 +22,12 @@ const Filter = () => {
 
                 <div className="each-box font">   Filter By: </div>
                 <label className="font" htmlFor="brand"></label>
-                <select  className="each-box font select-box" name="brand" id="brand" onChange={(e)=>
-                    setInputValue(e.target.value)}>
+                <select  className="each-box font select-box"
+                         name="brand"
+                         id="brand"
+                         onChange={
+                    (e)=> setInputValue(e.target.value)
+                }>
                     <option  className="each-box font" >--SELECT--</option>
                     {brands.map((product)=>{
                         return(
