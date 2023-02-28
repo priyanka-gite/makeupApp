@@ -1,4 +1,12 @@
-The BE YOU APP.
+The BE YOU MAKEUP APP.
+
+### TABLE OF CONTENTS:
+1. Introduction
+2. Getting Started
+3. Backend
+4. User Details
+
+
 # Introduction
 Welcome to our BE YOU app. Are you tired of browsing endlessly and mindlessly through all the makeup products App and  still haven’t found that perfect shade of blush. Don’t worry anymore. We at BE YOU have curated the wide range of perfect shades that suits every skin tone. Dive into the world of beautiful colours and find your perfect shade. In this app you can find collection of several beauty brands for every budget. It is also possible to filter the number of products based on types such as lipsticks, nail polish, mascara, eyeliner, eye shadow, blush and bronzer. You can also set your budget and app will give you results based on your price settings.
 
