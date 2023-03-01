@@ -1,0 +1,64 @@
+.outer-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #f2fefe;
+    flex: 1;
+}
+.right-side{
+    border: 2px solid teal;
+    margin: 20px;
+    width: 80vw;
+    padding: 20px;
+}
+
+.left-side{
+    border: 2px solid teal;
+    margin: 20px;
+    height: 80vh;
+    padding: 20px;
+
+}
+.right-side-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.sort {
+    margin: 30px;
+    font-size: medium;
+    font-weight: bold;
+    display: flex;
+    align-items: flex-end;
+flex-direction: row;
+}
+.button {
+    height: 30px;
+    background-color: transparent;
+    margin: 20px;
+    padding: 5px;
+    font-weight: bold;
+}
+.message-log{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.message{
+    margin: 50px;
+    color: red;
+    font-weight: bold;
+    font-size: larger;
+}
+.link{
+    cursor: pointer;
+}
+.compare-Button {
+    display: flex;
+flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,69 @@
+/*navigation design*/
+.navbar-main-container{
+    height: 80px;
+    /*background-color: rgba(64, 64, 64, 0.04);*/
+    background-color: #f2fefe;
+    padding: 30px 30px 30px 20px;
+}
+/*navigation main elements of flexbox*/
+.nav-outer-box {
+display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 1;
+    flex-wrap: wrap;
+
+}
+.left{
+    flex: 1;
+    list-style: none;
+}
+
+.middle{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+    flex: 1;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+.center{
+    flex: 1;
+    flex-wrap: nowrap;
+    text-align: center;
+    font-weight: bolder;
+    font-size: x-large;
+    list-style: none;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+.right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+}
+
+.menu-right{
+    margin-left: 125px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+.name{
+    font-size: 70px;
+}
+/* mouse over link */
+a:hover{
+    color: teal;
+}
+
+/* selected link */
+a:active{
+   color: teal;
+}

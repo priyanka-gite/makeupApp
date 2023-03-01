@@ -1,0 +1,39 @@
+.search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    flex-wrap: wrap;
+    background-color:  #f2fefe;
+}
+.input-box{
+    width: 250px;
+    height: 25px;
+    border: 0.5px solid teal;
+}
+
+.search-button {
+    height: 30px;
+    width: 70px;
+    background-color: transparent;
+    padding: 5px;
+    font-weight: bold;
+    cursor: pointer
+
+}
+.icon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+.p-message{
+    margin: 20px;
+    font-size: medium;
+}
+.search-button:hover{
+    color: teal;
+    background-color: #e8f2f2;
+}

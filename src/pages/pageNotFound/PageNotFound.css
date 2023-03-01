@@ -1,0 +1,15 @@
+.out-container{
+    display: flex;
+flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px
+
+}
+.h1-style{
+    color: rgba(99, 88, 88, 0.57);
+    margin: 10px;
+}
+.h2-style{
+    margin: 10px;
+}

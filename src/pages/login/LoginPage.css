@@ -1,0 +1,38 @@
+.outerClass {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+    width: 500px;
+    border: 1px teal solid;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 100px;
+    box-shadow: -2px -1px 54px 0px rgba(242,254,254,1);
+}
+
+.form-class{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    flex-shrink: 1;
+}
+.login-btn {
+    height: 30px;
+    background-color: transparent ;
+    padding: 5px;
+    font-weight: bold;
+    margin: 10px;
+    cursor: pointer;
+}
+.link-signin {
+    cursor: pointer;
+}
+.each-box-margin-login{
+    margin: 10px;
+    height: 30px;
+    width: 300px;
+}
